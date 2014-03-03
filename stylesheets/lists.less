@@ -40,6 +40,22 @@
   }
 }
 
+.focusable-panel {
+  .list-group, .list-tree {
+    .selected:before {
+      background: #444;
+    }
+  }
+
+  &:focus {
+    .list-group, .list-tree {
+      .selected:before {
+        background: @background-color-selected;
+      }
+    }
+  }
+}
+
 .select-list ol.list-group,
 &.select-list ol.list-group {
   li.two-lines {
