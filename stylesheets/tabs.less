@@ -12,18 +12,25 @@
   height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
   background: @tab-bar-background-color;
   box-shadow: inset 0 -8px 8px -4px rgba(0,0,0, .15);
-  padding: 0 10px;
+  padding: 0 10px 0 25px;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   &:after {
     content: "";
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    top: @tab-height + @tab-bottom-border-height;
     height: @tab-bottom-border-height;
-    left: 0px;
-    width: 100%;
+    left: 0;
+    right: 0;
     background-color: @tab-background-color-active;
     border-top: 1px solid @tab-border-color;
     border-bottom: 1px solid @tab-bar-bottom-border-color;
+    pointer-events: none;
   }
 
   .tab {
@@ -96,10 +103,6 @@
       z-index: 1;
       padding-right: 10px
     }
-
-    &:first-child {
-      margin-left: 20px;
-    }
   }
 
   .tab.active {
@@ -140,8 +143,10 @@
 
   .placeholder {
     height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    margin-left: -9px; // center between tabs
+    pointer-events: none;
     &:after {
-      top: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+      top: @tab-height + @tab-top-padding + @tab-bottom-border-height - 2px;
     }
   }
 }
