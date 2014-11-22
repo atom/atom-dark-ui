@@ -9,22 +9,22 @@
   }
 }
 
-.tool-panel {
+atom-panel {
   .text(normal);
   position: relative;
 
   background-color: @tool-panel-background-color;
 
-  &.panel-bottom {
+  &.bottom {
     border-top: 1px solid @tool-panel-border-color;
     box-shadow: inset 0 1px 0 @background-color-highlight;
   }
 
-  &.panel-left {
+  &.left {
     border-right: 1px solid @tool-panel-border-color;
   }
 
-  &.panel-right {
+  &.right {
     border-left: 1px solid @tool-panel-border-color;
   }
 }
@@ -35,7 +35,7 @@
 }
 
 .is-blurred {
-  .tool-panel,
+  atom-panel,
   .inset-panel {
   }
 }
