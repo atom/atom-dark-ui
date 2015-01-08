@@ -5,7 +5,7 @@
   background: @tree-view-background-color;
 
   .selected:before {
-  	background: #444;
+    background: #444;
     box-shadow: inset -3px 0 0 rgba(0,0,0, .05);
   }
 }
@@ -34,5 +34,12 @@
     .selected > .list-item > .name:before {
       color: #fff !important;
     }
+  }
+}
+
+[data-show-on-right-side=true] {
+  .tree-view .selected:before,
+  .focusable-panel {
+    box-shadow: inset 3px 0 0 rgba(0,0,0, .05);
   }
 }
