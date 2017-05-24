@@ -19,19 +19,6 @@
     display: none;
   }
 
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    height: @tab-bottom-border-height;
-    left: 0;
-    right: 0;
-    background-color: @tab-background-color-active;
-    border-top: 1px solid @tab-border-color;
-    border-bottom: 1px solid @tab-bar-bottom-border-color;
-    pointer-events: none;
-  }
-
   .tab {
     position: relative;
     top: @tab-top-padding;
@@ -149,5 +136,22 @@
     &:after {
       top: @tab-height + @tab-top-padding + @tab-bottom-border-height - 2px;
     }
+  }
+}
+
+.tab-bar + .item-views {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: @tab-bottom-border-height;
+    left: 0;
+    right: 0;
+    background-color: @tab-background-color-active;
+    border-top: 1px solid @tab-border-color;
+    border-bottom: 1px solid @tab-bar-bottom-border-color;
+    pointer-events: none;
   }
 }
